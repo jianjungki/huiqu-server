@@ -32,9 +32,9 @@ class CreateOrderTable extends Migration
             $table->string('contact_phone');
             $table->string('contact_address');
 
-            $table->timestamp('contact_at')->default(DB::raw('NULL'));;
-            $table->timestamp('close_time')->default(DB::raw('NULL'));;
-            $table->timestamp('finish_time')->default(DB::raw('NULL'));;
+            $table->timestamp('contact_at')->default(DB::raw('CURRENT_TIMESTAMP'));;
+            $table->timestamp('close_time')->default(DB::raw('CURRENT_TIMESTAMP'));;
+            $table->timestamp('finish_time')->default(DB::raw('CURRENT_TIMESTAMP'));;
             $table->timestamps();
 
         });
