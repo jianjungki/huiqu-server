@@ -23,8 +23,7 @@ class CreateWorkerTable extends Migration
             $table->string('avatar');
             $table->text('descript');
             $table->string('address');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
         });
     }
 

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -31,11 +32,10 @@ class CreateOrderTable extends Migration
             $table->string('contact_phone');
             $table->string('contact_address');
 
-            $table->timestamp('contact_at');
-            $table->timestamp('close_time');
-            $table->timestamp('finish_time');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamp('contact_at')->default(DB::raw('CURRENT_TIMESTAMP'));;
+            $table->timestamp('close_time')->default(DB::raw('CURRENT_TIMESTAMP'));;
+            $table->timestamp('finish_time')->default(DB::raw('CURRENT_TIMESTAMP'));;
+            $table->timestamps();
 
         });
     }
